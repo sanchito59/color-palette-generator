@@ -6,21 +6,22 @@ $(document).ready(function () {
         return newRGB = `rgb(${r}, ${g}, ${b})`;
     }
     generateColor();
-    $('#color1').click(function () {
-        generateColor();
-        // $('#color1').css('background-color', 'newRGB'); //Why won't you work?
-        $('#color1').html(newRGB);
-        document.getElementById('color1').style.background = newRGB;
-    });
-    $('#color2').click(function () {
-        generateColor();
-        $('#color2').html(newRGB);
-        document.getElementById('color2').style.background = newRGB;
-    });
-    $('#color3').click(function () {
-        generateColor();
-        $('#color3').html(newRGB);
-        document.getElementById('color3').style.background = newRGB;
+
+    $('#new-palette-button').click(function(){
+        const color1 = generateColor();
+        const color2 = generateColor();
+        const color3 = generateColor();
+        const color4 = generateColor();
+        const color5 = generateColor();
+        document.getElementById('color2').style.background = color2;
+        document.getElementById('color3').style.background = color3;
+        document.getElementById('color4').style.background = color4;
+        document.getElementById('color5').style.background = color5;
+        $('#color1').html(color1);
+        $('#color2').html(color2);
+        $('#color3').html(color3);
+        $('#color4').html(color4);
+        $('#color5').html(color5);
     });
 })
 

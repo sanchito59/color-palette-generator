@@ -7,7 +7,7 @@ body {
   margin-bottom: 25px;
 }
 
-#new-color-header {
+#new-palette-header {
   font-size: 20px;
   letter-spacing: 2px;
   text-align: center;
@@ -15,14 +15,14 @@ body {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-#new-color-button {
+#new-palette-button {
   background-color: white;
   width: 40%;
   margin: 0 auto;
   padding: 5px;
 }
 
-#new-color-button:hover {
+#new-palette-button:hover {
   background-color: rgba(240, 240, 232, 0.863);
 }
 
@@ -40,8 +40,8 @@ body {
 .wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 200px 200px 200px;
-      grid-template-columns: 200px 200px 200px;
+  -ms-grid-columns: 200px 200px 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px 200px 200px;
   grid-gap: 10px;
   color: white;
 }
