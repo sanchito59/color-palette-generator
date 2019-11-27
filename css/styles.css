@@ -2,6 +2,12 @@ body {
   margin: 0px;
 }
 
+#color-palette {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .wrapper {
   display: -ms-grid;
   display: grid;
@@ -15,7 +21,6 @@ body {
   width: 200px;
   height: 200px;
   background-color: #b93f3f;
-  margin: 5px auto;
   text-align: center;
   line-height: 200px;
 }

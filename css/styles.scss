@@ -6,7 +6,8 @@ body {
   margin: 0px;
 }
 
-#palette {
+#color-palette {
+  justify-content: center;
 }
 
 .wrapper {
@@ -20,7 +21,6 @@ body {
   width: 200px;
   height: 200px;
   background-color: rgb(185, 63, 63);
-  margin: 5px auto;
   text-align: center;
   line-height: 200px;
 }
