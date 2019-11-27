@@ -1,16 +1,3 @@
-class Construction {
-    constructor(color1, color2, color3) {
-        this.color1 = color1;
-        this.color2 = color2;
-        this.color3 = color3;
-        this.palette = palette;
-    }
-    generateColor(r, g, b) {
-
-    }
-}
-
-
 $(document).ready(function () {
     function generateColor() {
         const r = Math.floor(Math.random() * 256);
@@ -19,17 +6,20 @@ $(document).ready(function () {
         return newRGB = `rgb(${r}, ${g}, ${b})`;
     }
     generateColor();
-    $('#color1').click('on', function () {
+    $('#color1').click(function () {
         generateColor();
-        // $('body').css('background-color', 'newRGB'); //Why won't you work?
+        // $('#color1').css('background-color', 'newRGB'); //Why won't you work?
+        $('#color1').html(newRGB);
         document.getElementById('color1').style.background = newRGB;
     });
-    $('#color2').click('on', function () {
+    $('#color2').click(function () {
         generateColor();
+        $('#color2').html(newRGB);
         document.getElementById('color2').style.background = newRGB;
     });
-    $('#color3').click('on', function () {
+    $('#color3').click(function () {
         generateColor();
+        $('#color3').html(newRGB);
         document.getElementById('color3').style.background = newRGB;
     });
 })
