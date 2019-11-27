@@ -1,0 +1,22 @@
+body {
+  margin: 0px;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px;
+  grid-gap: 10px;
+  color: white;
+}
+
+.color-box {
+  width: 200px;
+  height: 200px;
+  background-color: #b93f3f;
+  margin: 5px auto;
+  text-align: center;
+  line-height: 200px;
+}
+/*# sourceMappingURL=styles.css.map */
