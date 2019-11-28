@@ -3,13 +3,11 @@ $(document).ready(function () {
     let colorLength = 5;
     let squares = $('.color-box');
     function generateColor() {
-        const r = Math.floor(Math.random() * 256);
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
         return newRGB = `rgb(${r}, ${g}, ${b})`;
     }
-    generateColor();
-
     function paletteArray() {
         for (let i = 0; i < colorLength; i++) {
             colorPalette.push(generateColor());
@@ -17,8 +15,6 @@ $(document).ready(function () {
         console.log('inside paletteArray(): ', colorPalette);
         return colorPalette;
     }
-    paletteArray();
-
     function setColors() {
         for (let i = 0; i < colorPalette.length; i++) {
             squares[i].style.background = colorPalette[i];
@@ -26,9 +22,13 @@ $(document).ready(function () {
             // squares.text(colorPalette[i]); //WIP
         }
     }
-    setColors();
-
+    function init() {
+        colorPalette = [];
+        generateColor();
+        paletteArray();
+        setColors();
+    }
     $('#new-palette-button').click(function () {
-
+        init();
     });
 })
