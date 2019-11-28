@@ -53,10 +53,17 @@ body {
   line-height: 200px;
 }
 
-#color2 {
-  background-color: rgb(63, 185, 181);
+.wrapper2 {
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px 40px;
+  grid-gap: 1px;
+  color: white;
 }
 
-#color3 {
-  background-color: rgb(145, 153, 171);
+.color-box2 {
+  height: 40px;
+  background-color: greenyellow;
+  text-align: center;
+  line-height: 40px;
+  color: black;
 }
