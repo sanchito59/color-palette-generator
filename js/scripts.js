@@ -10,7 +10,7 @@ class ColorPaletteHolder {
     // PaletteHolder.prototype.addPalette = function (palette) {
     //     this.mailingAddresses.push(palette);
     // }
-    addPalette(palette) {
+    addPalette(palette) { //need to get this running
         palette.id = this.assignId();
         this.palettes.push(palette);
     }
@@ -52,11 +52,8 @@ class Palette {
         this.color4 = color4;
         this.color5 = color5;
     }
-    savePalette() {
-        let savedPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
-        console.log(savedPalette);
-    }
 }
+
 
 // User Interface Logic ---------
 function attachContactListeners() {
@@ -69,6 +66,9 @@ let colorPaletteHolder = new ColorPaletteHolder();
 // let addresses = new PaletteHolder();
 $(document).ready(function () {
     attachContactListeners();
+    function savePalette() {
+        let savedPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
+    }
     // let fullBook = Object.assign(newContact, newAddress);
     // ColorPaletteHolder.addPalette(newContact);
     //NEW CODE^^^^ needs work
@@ -76,6 +76,7 @@ $(document).ready(function () {
     let colorPalette = [];
     const colorLength = 5;
     const squares = $('.color-box');
+    const savedPalette = $('.color-box2');
 
     function generateColor() {
         let r = Math.floor(Math.random() * 256);
@@ -98,6 +99,14 @@ $(document).ready(function () {
         }
     }
 
+    function displayPalette(){
+        console.log(colorPalette);
+        for(let i = 0; i < colorPalette.length; i++){
+            savedPalette[i].style.background = colorPalette[i];
+            $(savedPalette[i]).text('');
+        }
+    }
+
     function init() {
         colorPalette = [];
         generateColor();
@@ -113,5 +122,6 @@ $(document).ready(function () {
 
     $('#save-palette-button').click(function () {
         savePalette();
+        displayPalette();
     });
 })
