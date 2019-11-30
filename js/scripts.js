@@ -2,15 +2,9 @@
 class ColorPaletteHolder {
     constructor() {
         this.palettes = [],
-            this.currentId = 0;
+        this.currentId = 0;
     }
-    // function PaletteHolder() {
-    //     this.mailingAddresses = []
-    // }
-    // PaletteHolder.prototype.addPalette = function (palette) {
-    //     this.mailingAddresses.push(palette);
-    // }
-    addPalette(palette) { //need to get this running
+    addPalette(palette) {
         palette.id = this.assignId();
         this.palettes.push(palette);
     }
@@ -44,6 +38,14 @@ class ColorPaletteHolder {
 }
 
 // Business Logic for Palettes ---------
+class PaletteHolder {
+    constructor() {
+        this.palettes = [];
+    }
+    addPalette (palette) {
+        this.palettes.push(palette);
+    }
+}
 class Palette {
     constructor(color1, color2, color3, color4, color5) {
         this.color1 = color1;
@@ -56,21 +58,25 @@ class Palette {
 
 
 // User Interface Logic ---------
-function attachContactListeners() {
-    $("#buttons").on("click", ".deleteButton", function () {
-        ColorPaletteHolder.deletePalette(this.id);
-    });
-};
+// function attachContactListeners() {
+//     $("#buttons").on("click", ".deleteButton", function () {
+//         ColorPaletteHolder.deletePalette(this.id);
+//     });
+// };
 
 let colorPaletteHolder = new ColorPaletteHolder();
-// let addresses = new PaletteHolder();
+let palettes = new PaletteHolder();
 $(document).ready(function () {
-    attachContactListeners();
+    // attachContactListeners();
     function savePalette() {
-        let savedPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
+        let newPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
+        console.log(colorPalette)
+        console.log(palettes)
+        colorPaletteHolder.addPalette(colorPalette);
+        console.log('savedPalette(): ', colorPaletteHolder);
+        return colorPaletteHolder;
     }
     // let fullBook = Object.assign(newContact, newAddress);
-    // ColorPaletteHolder.addPalette(newContact);
     //NEW CODE^^^^ needs work
 
     let colorPalette = [];
@@ -100,7 +106,7 @@ $(document).ready(function () {
     }
 
     function displayPalette(){
-        console.log(colorPalette);
+        // console.log(colorPalette);
         for(let i = 0; i < colorPalette.length; i++){
             savedPalette[i].style.background = colorPalette[i];
             $(savedPalette[i]).text('');
@@ -112,14 +118,15 @@ $(document).ready(function () {
         generateColor();
         paletteArray();
         setColors();
+        return colorPalette;
     }
-
+    
     init();
-
+    
     $('#new-palette-button').click(function () {
         init();
     });
-
+    
     $('#save-palette-button').click(function () {
         savePalette();
         displayPalette();
