@@ -46,10 +46,12 @@ body {
 }
 
 .color-box {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   text-align: center;
   line-height: 200px;
+  border: 2px solid white;
+  border-radius: 50%;
 }
 
 .wrapper2 {
