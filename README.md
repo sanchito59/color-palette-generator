@@ -1,4 +1,6 @@
-# Project Title
+https://sanchito59.github.io/color-palette-generator/
+
+# Color Palette Generator
 
 ## By **Developer**
 
@@ -13,7 +15,7 @@ This application is/will...
 1. Click [here](https://github.com/exampleUsername/example-project-title.git) to go to the repository location where you will find the clone/download menu.
 
  2. Navigate to the directory (folder) that contains your browser's downloads.
- 3. Double-click on **Project Title** directory (folder).
+ 3. Double-click on **Color Palette Generator** directory (folder).
  4. Open directory contents by extracting/unzipping documents from folder.
  5. Run index.html.
 
@@ -23,13 +25,13 @@ This application is/will...
  2. Once the repository finishes downloading you will need to install the packaged modules.
 
 #### Install:
-In order to use **Project Title** you will need to install the dependenices required to run it. Once you have cloned or zipped the file from Github, in your terminal or command line do the following: 
+In order to use **Color Palette Generator** you will need to install the dependenices required to run it. Once you have cloned or zipped the file from Github, in your terminal or command line do the following: 
 
 from _C:\Users\exampleUser\exampleCloneLocation\example-project-title>_  
 1. npm install
 2. npm run build
 
-Step 1 will install all of the dependencies used to develop **Project Title**.  
+Step 1 will install all of the dependencies used to develop **Color Palette Generator**.  
 Step 2 will build the project, performing any necessary building/prep tasks.
 
 **_If you are using Mac OS, you must change:_** 
@@ -72,7 +74,7 @@ _"'start': 'npm run build; webpack-dev-server --open --mode development',"_
 - - - -
 ### Support and Contact
 
-If you run into any issues running **Project Title**, please contact **Developer**.
+If you run into any issues running **Color Palette Generator**, please contact **Developer**.
 
 ### License
 
