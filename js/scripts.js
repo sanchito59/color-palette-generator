@@ -2,7 +2,7 @@
 class ColorPaletteHolder {
     constructor() {
         this.palettes = [],
-        this.currentId = 0;
+            this.currentId = 0;
     }
     addPalette(palette) {
         palette.id = this.assignId();
@@ -42,7 +42,7 @@ class PaletteHolder {
     constructor() {
         this.palettes = [];
     }
-    addPalette (palette) {
+    addPalette(palette) {
         this.palettes.push(palette);
     }
 }
@@ -56,27 +56,34 @@ class Palette {
     }
 }
 
-
+// function displayPalette(paletteToDisplay) {
+//     console.log('displayPalette: ',colorPalette)
+//     const paletteList = $("ul#palettes");
+//     const htmlForPaletteInfo = "";
+//     paletteToDisplay.palettes.forEach(function(palette) {
+//       htmlForPaletteInfo += "<li id=" + palette.id + ">" + palette.colorPalette[0] + " " + palette.colorPalette[1] + " " + palette.colorPalette[2] + " " + palette.colorPalette[3] + " " + palette.colorPalette[4] + " " +"</li>";
+//     });
+//     paletteList.html(htmlForPaletteInfo);
+//   };
 // User Interface Logic ---------
-// function attachContactListeners() {
+// function attachpaletteListeners() {
 //     $("#buttons").on("click", ".deleteButton", function () {
 //         ColorPaletteHolder.deletePalette(this.id);
 //     });
 // };
 
 let colorPaletteHolder = new ColorPaletteHolder();
-let palettes = new PaletteHolder();
+// let palettes = new PaletteHolder();
 $(document).ready(function () {
-    // attachContactListeners();
+    // attachpaletteListeners();
     function savePalette() {
         let newPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
         console.log(colorPalette)
-        console.log(palettes)
         colorPaletteHolder.addPalette(colorPalette);
         console.log('savedPalette(): ', colorPaletteHolder);
         return colorPaletteHolder;
     }
-    // let fullBook = Object.assign(newContact, newAddress);
+    // let fullBook = Object.assign(newpalette, newAddress);
     //NEW CODE^^^^ needs work
 
     let colorPalette = [];
@@ -105,12 +112,29 @@ $(document).ready(function () {
         }
     }
 
-    function displayPalette(){
-        // console.log(colorPalette);
-        for(let i = 0; i < colorPalette.length; i++){
-            savedPalette[i].style.background = colorPalette[i];
-            $(savedPalette[i]).text('');
-        }
+    function displayPalette(paletteToDisplay) {
+        console.log(savedPalette);
+        paletteToDisplay.palettes.forEach(function (palette) {
+            const paletteLayout = `<li id='${colorPaletteHolder.currentId}'><h4>Palette: </h4>
+            <div class="wrapper2">
+            <div class="color-box2"></div>
+            <div class="color-box2"></div>
+            <div class="color-box2"></div>
+            <div class="color-box2"></div>
+            <div class="color-box2"></div>
+            </div></li>`
+            //This code produces duplicates saving "1 then 2 then 3, not appending proper colors either"
+            console.log(colorPaletteHolder.currentId);
+            $('#palettes').append(paletteLayout);
+            for (let i = 0; i < colorPalette.length; i++) {
+                savedPalette[i].style.background = colorPalette[i];
+            }
+            // $(savedPalette).text('');
+        })
+
+        // let paletteList = $('#' + colorPaletteHolder.currentId);
+        // console.log(paletteList);
+
     }
 
     function init() {
@@ -120,15 +144,16 @@ $(document).ready(function () {
         setColors();
         return colorPalette;
     }
-    
+
     init();
-    
+
     $('#new-palette-button').click(function () {
         init();
     });
-    
+
     $('#save-palette-button').click(function () {
         savePalette();
-        displayPalette();
+        // displayPalette();
+        displayPalette(colorPaletteHolder);
     });
 })
