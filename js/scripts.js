@@ -19,8 +19,7 @@ class ColorPaletteHolder {
                     return this.palettes[i];
                 }
             }
-        }
-        ;
+        };
         return false;
     }
     deletePalette(id) {
@@ -31,8 +30,7 @@ class ColorPaletteHolder {
                     return true;
                 }
             }
-        }
-        ;
+        };
         return false;
     }
 }
@@ -57,7 +55,6 @@ class Palette {
 }
 
 let colorPaletteHolder = new ColorPaletteHolder();
-// let palettes = new PaletteHolder();
 $(document).ready(function () {
     // attachpaletteListeners();
     function savePalette() {
@@ -70,8 +67,7 @@ $(document).ready(function () {
 
     let colorPalette = [];
     const colorLength = 5;
-    const squares = $('.color-box');
-    
+    const squares = $('.palette-color');
 
     function generateColor() {
         let r = Math.floor(Math.random() * 256);
@@ -95,25 +91,18 @@ $(document).ready(function () {
     }
 
     function displayPalette(paletteToDisplay) {
-        let paletteList = $('li #' + colorPaletteHolder.currentId);
-        console.log(paletteList);
-        // console.log('LOOKY HERE: ', paletteToDisplay.palettes);
         $('#palettes').show();
-        for(let i = 0; i < paletteToDisplay.palettes.length; i++){
-            console.log('TEST', i);
+        for (let i = 0; i < paletteToDisplay.palettes.length; i++) {
             const paletteLayout = `<li id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
             <div class="wrapper2">
-            <div class="color-box2"></div>
-            <div class="color-box2"></div>
-            <div class="color-box2"></div>
-            <div class="color-box2"></div>
-            <div class="color-box2"></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             </div></li>`
-            //This code produces duplicates saving "1 then 2 then 3, not appending proper colors either"
-            // console.log(colorPaletteHolder.currentId);
-            // console.log('HERE: ', savedPalette[i]);
             $('#palettes').append(paletteLayout);
-            const savedPalette = $('.color-box2');
+            const savedPalette = $('.color-box' + colorPaletteHolder.currentId);
             for (let i = 0; i < paletteLayout.length; i++) {
                 console.log('forLoop savedPal:', savedPalette[i]);
                 savedPalette[i].style.background = colorPalette[i];
@@ -130,7 +119,6 @@ $(document).ready(function () {
     }
 
     init();
-
     $('#new-palette-button').click(function () {
         init();
     });
