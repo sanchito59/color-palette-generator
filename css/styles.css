@@ -50,7 +50,7 @@ body {
   color: white;
 }
 
-.color-box {
+.palette-color {
   width: 250px;
   height: 250px;
   text-align: center;
@@ -68,7 +68,7 @@ body {
   color: white;
 }
 
-.color-box2 {
+.palette-display {
   height: 40px;
   background-color: greenyellow;
   text-align: center;
