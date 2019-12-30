@@ -37,6 +37,10 @@ body {
           justify-content: center;
 }
 
+#palettes {
+  display: none;
+}
+
 .wrapper {
   display: -ms-grid;
   display: grid;
