@@ -118,17 +118,17 @@ body {
   .wrapper {
     display: grid;
     grid-template-columns: 100px 100px 100px 100px 100px;
-    grid-gap: 22px;
+    grid-gap: 40px;
     color: white;
   }
 
   .palette-color {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     font-size: 11px;
     font-weight: bold;
     text-align: center;
-    line-height: 140px;
+    line-height: 160px;
     border: 2px solid white;
     border-radius: 50%;
   }
@@ -141,7 +141,7 @@ body {
     font-size: 12px;
     letter-spacing: 1.5px;
     line-height: 45px;
-    top: 290px;
+    top: 320px;
     left: 275px;
   }
 }
