@@ -20,13 +20,28 @@ body {
 }
 
 #new-palette-button{
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   width: 40%;
   margin: 0 auto;
   padding: 5px;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
-#new-palette-button:hover{
-  background-color: rgba(240, 240, 232, 0.863);
+
+#new-palette-button:hover, #save-palette-button:hover {
+  background: black;
+  color: white;
+}
+
+#save-palette-button {
+  background: white;
+  color: black;
+  width: 20%;
+  float: right;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  border-left: 2px solid black;
 }
 
 .buffer {
@@ -73,6 +88,10 @@ body {
   color: black;
 }
 
+.palette-display:hover {
+  border: 2px solid white;
+}
+
 #current-color {
   height: 99px;
   width: 270px;
@@ -87,4 +106,40 @@ body {
   left: 275px;
   position: fixed;
   display: none;
+}
+
+//Mobile Responsiveness
+@media (max-width: 768px){  
+  #save-palette-button {
+    width: 28%;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 75px 75px 75px 75px 75px;
+    grid-gap: 22px;
+    color: white;
+  }
+
+  .palette-color {
+    width: 110px;
+    height: 110px;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+  
+  #current-color {
+    height: 60px;
+    width: 270px;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    line-height: 45px;
+    top: 250px;
+    left: 275px;
+  }
 }
