@@ -13,10 +13,6 @@
 
 <body>
     <h1 id="page-title">Color Palette Generator</h1>
-    <div id="new-palette-header">
-        <p id="save-palette-button">SAVE PALETTE</p>
-        <p id='new-palette-button'>New Color Palette</p>
-    </div>
     <div id="color-palette" class="wrapper">
         <div class="palette-color" id="color1"></div>
         <div class="palette-color" id="color2"></div>
@@ -24,12 +20,16 @@
         <div class="palette-color" id="color4"></div>
         <div class="palette-color" id="color5"></div>
     </div>
+    <div id="new-palette-header">
+        <p id="save-palette-button">SAVE PALETTE</p>
+        <p id='new-palette-button'>New Color Palette</p>
+    </div>
     <div class='row'>
-        <div class='col-lg-3'>
+        <!-- <div class='col-lg-2'> -->
             <div id="saved-palettes">
-                <ul id="palettes">
-                </ul>
-            </div>
+                <p id="palettes">
+                </p>
+            <!-- </div> -->
         </div>
         <div id='current-color'>
             <p>Selected Color: <span class='color-value'></span></p>

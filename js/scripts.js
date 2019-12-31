@@ -46,7 +46,7 @@ class Palette {
 }
 
 function displayIndividualColor() {
-    $('ul#palettes').on('click', 'div', function (event) {
+    $('p#palettes').on('click', 'div', function (event) {
         $('#current-color').show();
         let color = this.style.backgroundColor;
         $('.color-value').text(color);
@@ -94,14 +94,14 @@ $(document).ready(function () {
     function displayPalette(paletteToDisplay) {
         $('#palettes').show();
         for (let i = 0; i < paletteToDisplay.palettes.length; i++) {
-            const paletteLayout = `<li id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
+            const paletteLayout = `<p id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
             <div class="wrapper2">
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
-            </div></li>`
+            </div></p>`
             $('#palettes').append(paletteLayout);
             const savedPalette = $('.color-box' + colorPaletteHolder.currentId);
             for (let i = 0; i < paletteLayout.length; i++) {

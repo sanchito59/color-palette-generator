@@ -1,17 +1,22 @@
 body {
+  margin: 0;
   background-color: grey;
+  width: 100vw;
 }
 
 #page-title {
   text-align: center;
+  margin-top: 25px;
   margin-bottom: 25px;
 }
 
 #new-palette-header {
+  width: 100%;
   font-size: 20px;
   letter-spacing: 2px;
   text-align: center;
   margin-bottom: 25px;
+  margin-top: 25px;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -40,18 +45,12 @@ body {
   border-left: 2px solid black;
 }
 
-.buffer {
-  background-color: red;
-  height: 200px;
-}
-
-#color-palette {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.row {
+  width: 100vw;
 }
 
 #palettes {
+  margin-left: 2em;
   display: none;
 }
 
@@ -62,6 +61,9 @@ body {
       grid-template-columns: 200px 200px 200px 200px 200px;
   grid-gap: 10px;
   color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .palette-color {
@@ -77,14 +79,14 @@ body {
 .wrapper2 {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 40px 40px 40px 40px 40px;
-      grid-template-columns: 40px 40px 40px 40px 40px;
+  -ms-grid-columns: 50px 50px 50px 50px 50px;
+      grid-template-columns: 50px 50px 50px 50px 50px;
   grid-gap: 1px;
   color: white;
 }
 
 .palette-display {
-  height: 40px;
+  height: 50px;
   text-align: center;
   line-height: 40px;
   color: black;
@@ -106,8 +108,8 @@ body {
   line-height: 55px;
   font-weight: bold;
   letter-spacing: 1.5px;
-  top: 400px;
-  left: 275px;
+  top: 450px;
+  left: 300px;
   position: fixed;
   display: none;
 }
@@ -142,8 +144,8 @@ body {
     font-size: 12px;
     letter-spacing: 1.5px;
     line-height: 45px;
-    top: 320px;
-    left: 275px;
+    top: 390px;
+    left: 300px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
