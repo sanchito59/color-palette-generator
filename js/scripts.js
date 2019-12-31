@@ -35,15 +35,6 @@ class ColorPaletteHolder {
     }
 }
 
-// Business Logic for Palettes ---------
-class PaletteHolder {
-    constructor() {
-        this.palettes = [];
-    }
-    addPalette(palette) {
-        this.palettes.push(palette);
-    }
-}
 class Palette {
     constructor(color1, color2, color3, color4, color5) {
         this.color1 = color1;
@@ -54,16 +45,26 @@ class Palette {
     }
 }
 
+function displayIndividualColor() {
+    $('ul#palettes').on('click', 'div', function (event) {
+        $('#current-color').show();
+        let color = this.style.backgroundColor;
+        $('.color-value').text(color);
+        let colorDisplayDiv = document.getElementById('current-color');
+        colorDisplayDiv.style.background = color;
+        event.stopPropagation();
+    });
+}
+
 let colorPaletteHolder = new ColorPaletteHolder();
 $(document).ready(function () {
-    // attachpaletteListeners();
+    displayIndividualColor();
     function savePalette() {
         let newPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
         colorPaletteHolder.addPalette(colorPalette);
         console.log('savedPalette(): ', colorPaletteHolder);
         return colorPaletteHolder;
     }
-    //NEW CODE^^^^ needs work
 
     let colorPalette = [];
     const colorLength = 5;
@@ -104,7 +105,6 @@ $(document).ready(function () {
             $('#palettes').append(paletteLayout);
             const savedPalette = $('.color-box' + colorPaletteHolder.currentId);
             for (let i = 0; i < paletteLayout.length; i++) {
-                console.log('forLoop savedPal:', savedPalette[i]);
                 savedPalette[i].style.background = colorPalette[i];
             }
         }
@@ -124,7 +124,6 @@ $(document).ready(function () {
     });
 
     $('#save-palette-button').click(function () {
-        console.log('colorPaletteHolder: ', colorPaletteHolder)
         savePalette();
         displayPalette(colorPaletteHolder);
     });
