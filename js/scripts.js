@@ -47,11 +47,11 @@ class Palette {
 
 function displayIndividualColor() {
     $('ul#palettes').on('click', 'div', function (event) {
-        let individualColor = '#currentColor' + colorPaletteHolder.currentId;
-        $(individualColor).show();
+        $('#current-color').show();
         let color = this.style.backgroundColor;
-        console.log(color);
-        $(individualColor).text(color);
+        $('.color-value').text(color);
+        let colorDisplayDiv = document.getElementById('current-color');
+        colorDisplayDiv.style.background = color;
         event.stopPropagation();
     });
 }
@@ -95,7 +95,6 @@ $(document).ready(function () {
         $('#palettes').show();
         for (let i = 0; i < paletteToDisplay.palettes.length; i++) {
             const paletteLayout = `<li id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
-            <p class='color-value' id='currentColor${colorPaletteHolder.currentId}'>color value</p>
             <div class="wrapper2">
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
