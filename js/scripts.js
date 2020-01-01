@@ -45,7 +45,7 @@ class Palette {
     }
 }
 
-function displayIndividualColor() {
+const displayIndividualColor = () => {
     $('p#palettes').on('click', 'div', function (event) {
         $('#current-color').show();
         let color = this.style.backgroundColor;
@@ -57,9 +57,10 @@ function displayIndividualColor() {
 }
 
 let colorPaletteHolder = new ColorPaletteHolder();
+
 $(document).ready(function () {
     displayIndividualColor();
-    function savePalette() {
+    const savePalette = () => {
         let newPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
         colorPaletteHolder.addPalette(colorPalette);
         console.log('savedPalette(): ', colorPaletteHolder);
@@ -70,28 +71,28 @@ $(document).ready(function () {
     const colorLength = 5;
     const squares = $('.palette-color');
 
-    function generateColor() {
+    const generateColor = () => {
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() * 256);
         return newRGB = `rgb(${r}, ${g}, ${b})`;
     }
 
-    function paletteArray() {
+    const paletteArray = () => {
         for (let i = 0; i < colorLength; i++) {
             colorPalette.push(generateColor());
         }
         return colorPalette;
     }
 
-    function setColors() {
+    const setColors = () => {
         for (let i = 0; i < colorPalette.length; i++) {
             squares[i].style.background = colorPalette[i];
             $(squares[i]).text(colorPalette[i]);
         }
     }
 
-    function displayPalette(paletteToDisplay) {
+    const displayPalette = (paletteToDisplay) => {
         $('#palettes').show();
         for (let i = 0; i < paletteToDisplay.palettes.length; i++) {
             const paletteLayout = `<p id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
@@ -110,7 +111,7 @@ $(document).ready(function () {
         }
     }
 
-    function init() {
+    const init = () => {
         colorPalette = [];
         generateColor();
         paletteArray();
