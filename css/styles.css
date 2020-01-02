@@ -45,6 +45,10 @@ body {
   border-left: 2px solid black;
 }
 
+#saved-palettes ul:hover {
+  color: white;
+}
+
 #test-theme-button {
   background: white;
   color: black;
@@ -116,7 +120,7 @@ body {
   clear: both;
 }
 
-/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grids we have gaps. */
 @supports (display: grid) {
   #theme-test > * {
     width: auto;
