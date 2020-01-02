@@ -29,7 +29,7 @@ body {
   border-right: 2px solid black;
 }
 
-#new-palette-button:hover, #save-palette-button:hover, #test-theme:hover {
+#new-palette-button:hover, #save-palette-button:hover, #test-theme-button:hover {
   background: black;
   color: white;
 }
@@ -45,7 +45,7 @@ body {
   border-left: 2px solid black;
 }
 
-#test-theme {
+#test-theme-button {
   background: white;
   color: black;
   width: 20%;
@@ -67,12 +67,12 @@ body {
 }
 
 #theme-body {
-  margin-left: 20em;
   width: 600px;
   height: 410px;
   padding: 5px;
   margin-bottom: 15px;
   border: 2px solid white;
+  display: none;
 }
 
 *, *:before, *:after {
@@ -171,20 +171,19 @@ ul h4:hover {
 }
 
 #current-color {
-  height: 80px;
+  height: 110px;
   width: 335px;
   padding: 10px;
   border: 2.5px solid white;
   border-radius: 15px;
   margin-top: 25px;
+  margin: 0 auto;
+  margin-bottom: 25px;
   color: white;
   text-align: center;
-  line-height: 55px;
+  line-height: 85px;
   font-weight: bold;
   letter-spacing: 1.5px;
-  top: 450px;
-  left: 300px;
-  position: fixed;
   display: none;
 }
 
