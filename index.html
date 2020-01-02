@@ -21,16 +21,19 @@
         <div class="palette-color" id="color5"></div>
     </div>
     <div id="new-palette-header">
-        <p class='nav-buttons' id='test-theme'>Test Theme</p>
+        <p class='nav-buttons' id='test-theme-button'>Test Theme <span id="theme-ID"></span></p>
         <p class='nav-buttons' id="save-palette-button">Save Palette</p>
         <p class='nav-buttons' id='new-palette-button'>New Color Palette</p>
     </div>
     <div class='row'>
-        <div class='col-lg-2'>
+        <div class='col-lg-3'>
             <div id="saved-palettes">
                 <p id="palettes">
                 </p>
             </div>
+        </div>
+        <div class="col-lg-3" id='current-color'>
+            <p>Selected Color: <span class='color-value'></span></p>
         </div>
         <div class="col-lg-6">
             <div id="theme-body">
@@ -46,9 +49,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div id='current-color'>
-            <p>Selected Color: <span class='color-value'></span></p>
-        </div> -->
     </div>
     <script src="scripts.js" async defer></script>
 </body>
