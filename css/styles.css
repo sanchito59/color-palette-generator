@@ -29,7 +29,7 @@ body {
   border-right: 2px solid black;
 }
 
-#new-palette-button:hover, #save-palette-button:hover {
+#new-palette-button:hover, #save-palette-button:hover, #test-theme:hover {
   background: black;
   color: white;
 }
@@ -43,6 +43,18 @@ body {
   margin: 0 auto;
   padding: 5px;
   border-left: 2px solid black;
+}
+
+#test-theme {
+  background: white;
+  color: black;
+  width: 20%;
+  float: left;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  border-right: 2px solid black;
+  display: none;
 }
 
 .row {
@@ -90,6 +102,10 @@ body {
   text-align: center;
   line-height: 40px;
   color: black;
+}
+
+ul h4:hover {
+  text-decoration: underline;
 }
 
 .palette-display:hover {
