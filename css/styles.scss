@@ -33,7 +33,7 @@ body {
   border-right: 2px solid black;
 }
 
-#new-palette-button:hover, #save-palette-button:hover {
+#new-palette-button:hover, #save-palette-button:hover, #test-theme:hover {
   background: black;
   color: white;
 }
@@ -49,6 +49,18 @@ body {
   border-left: 2px solid black;
 }
 
+#test-theme {
+  background: white;
+  color: black;
+  width: 20%;
+  float: left;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  border-right: 2px solid black;
+  display: none;
+}
+
 .row {
   width: 100vw;
 }
@@ -57,6 +69,67 @@ body {
   margin-left: 2em;
   display: none;
 }
+
+//TEST THEME GRID
+#theme-body {
+  margin-left: 20em;
+  width: 600px;
+  height: 410px;
+  padding: 5px;
+  margin-bottom: 15px;
+  border: 2px solid white;
+  // display: none;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* no grid support? */
+#test-sidebar {
+  // float: left;
+  width: 19.1489%;
+}
+
+#test-content {
+  // float: right;
+  width: 79.7872%;
+}
+
+/* make a grid */
+#theme-test {
+  max-width: 940px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+}
+
+#theme-test > * {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+}
+
+#test-header, #test-footer {
+  grid-column: 1 / -1;
+  /* needed for the floated layout */
+  clear: both;
+}
+
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  #theme-test > * {
+    width: auto;
+    margin: 0;
+  }
+}
+//TEST THEME GRID END
 
 .wrapper {
   display: grid;
@@ -88,6 +161,10 @@ body {
   text-align: center;
   line-height: 40px;
   color: black;
+}
+
+ul h4:hover {
+  text-decoration: underline;
 }
 
 .palette-display:hover {
