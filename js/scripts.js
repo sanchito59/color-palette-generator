@@ -47,12 +47,15 @@ class Palette {
 
 const displayIndividualColor = () => {
     $('p#palettes').on('click', 'div', function (event) {
-        $('#current-color').show();
+        $('#current-color').fadeIn();
         let color = this.style.backgroundColor;
         $('.color-value').text(color);
         let colorDisplayDiv = document.getElementById('current-color');
         colorDisplayDiv.style.background = color;
         event.stopPropagation();
+        // setTimeout(function () {
+        //     $('#current-color').fadeOut();
+        // }, 5000);
     });
 }
 
@@ -112,30 +115,31 @@ $(document).ready(function () {
     }
 
     $('div#saved-palettes').on('click', 'ul', function () {
-        $('#test-theme').fadeIn();
+        $('#test-theme-button').fadeIn();
+        $('#theme-ID').text(this.id);
         const paletteTheme = () => {
             let paletteID = this.id - 1;
             let selectedPalette = colorPaletteHolder.palettes[paletteID];
             return selectedPalette;
         }
         let selectedTheme = paletteTheme();
-        $('#test-theme').click(function () {
+        $('#test-theme-button').click(function () {
+            $('#theme-body').fadeIn();
             console.log(selectedTheme)
             let bodyBackgroundColor = selectedTheme[0];
             let headerColor = selectedTheme[1];
             let textColor = selectedTheme[2];
             let testContentBackground = selectedTheme[3];
             let sidebarColor = selectedTheme[4];
-            
+
             document.getElementById('theme-body').style.backgroundColor = bodyBackgroundColor;
-            document.getElementById('test-header').style.backgroundColor = headerColor; 
+            document.getElementById('test-header').style.backgroundColor = headerColor;
             document.getElementById('test-header').style.color = textColor;
             document.getElementById('test-sidebar').style.backgroundColor = sidebarColor;
             document.getElementById('test-content').style.backgroundColor = testContentBackground;
             document.getElementById('test-footer').style.backgroundColor = textColor;
         })
     })
-
 
     const init = () => {
         colorPalette = [];
