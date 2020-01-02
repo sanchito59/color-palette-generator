@@ -116,6 +116,11 @@ $(document).ready(function () {
 
     $('div#saved-palettes').on('click', 'ul', function () {
         $('#test-theme-button').fadeIn();
+        if ($('#test-theme-button').hasClass('pulse')) {
+            $('#test-theme-button').removeClass('pulse');
+        } else {
+            $('#test-theme-button').addClass('pulse');
+        }
         $('#theme-ID').text(this.id);
         const paletteTheme = () => {
             let paletteID = this.id - 1;
@@ -124,6 +129,7 @@ $(document).ready(function () {
         }
         let selectedTheme = paletteTheme();
         $('#test-theme-button').click(function () {
+            $('#test-theme-button').removeClass('pulse');
             $('#theme-body').fadeIn();
             console.log(selectedTheme)
             let bodyBackgroundColor = selectedTheme[0];
