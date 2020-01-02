@@ -63,7 +63,7 @@ $(document).ready(function () {
     const savePalette = () => {
         let newPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
         colorPaletteHolder.addPalette(colorPalette);
-        console.log('savedPalette(): ', colorPaletteHolder);
+        // console.log('savedPalette(): ', colorPaletteHolder);
         return colorPaletteHolder;
     }
 
@@ -95,14 +95,14 @@ $(document).ready(function () {
     const displayPalette = (paletteToDisplay) => {
         $('#palettes').show();
         for (let i = 0; i < paletteToDisplay.palettes.length; i++) {
-            const paletteLayout = `<p id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
+            const paletteLayout = `<ul id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
             <div class="wrapper2">
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
             <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
-            </div></p>`
+            </div></ul>`
             $('#palettes').append(paletteLayout);
             const savedPalette = $('.color-box' + colorPaletteHolder.currentId);
             for (let i = 0; i < paletteLayout.length; i++) {
@@ -110,6 +110,20 @@ $(document).ready(function () {
             }
         }
     }
+    
+    $('div#saved-palettes').on('click', 'ul', function () {
+        $('#test-theme').fadeIn();
+        const paletteTheme = () => {
+            let paletteID = this.id - 1;
+            let selectedPalette = colorPaletteHolder.palettes[paletteID];
+            return selectedPalette;
+        }
+        let selectedTheme = paletteTheme();
+        $('#test-theme').click(function () {
+            console.log(selectedTheme)
+        })
+    })
+
 
     const init = () => {
         colorPalette = [];
