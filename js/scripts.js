@@ -110,7 +110,7 @@ $(document).ready(function () {
             }
         }
     }
-    
+
     $('div#saved-palettes').on('click', 'ul', function () {
         $('#test-theme').fadeIn();
         const paletteTheme = () => {
@@ -121,6 +121,18 @@ $(document).ready(function () {
         let selectedTheme = paletteTheme();
         $('#test-theme').click(function () {
             console.log(selectedTheme)
+            let bodyBackgroundColor = selectedTheme[0];
+            let headerColor = selectedTheme[1];
+            let textColor = selectedTheme[2];
+            let testContentBackground = selectedTheme[3];
+            let sidebarColor = selectedTheme[4];
+            
+            document.getElementById('theme-body').style.backgroundColor = bodyBackgroundColor;
+            document.getElementById('test-header').style.backgroundColor = headerColor; 
+            document.getElementById('test-header').style.color = textColor;
+            document.getElementById('test-sidebar').style.backgroundColor = sidebarColor;
+            document.getElementById('test-content').style.backgroundColor = testContentBackground;
+            document.getElementById('test-footer').style.backgroundColor = textColor;
         })
     })
 
