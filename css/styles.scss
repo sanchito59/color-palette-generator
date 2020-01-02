@@ -62,6 +62,39 @@ body {
   display: none;
 }
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+.pulse {
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
+  transform: scale(1);
+  animation: pulse-shadow 2s infinite;
+}
+
+@keyframes pulse-shadow {
+  0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  
+  70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  
+  100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
 #saved-palettes ul:hover {
   color: white;  
   text-decoration: underline;
