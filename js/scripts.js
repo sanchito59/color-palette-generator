@@ -49,20 +49,86 @@ const displayIndividualColor = () => {
     $('p#palettes').on('click', 'div', function (event) {
         $('#current-color').fadeIn();
         let color = this.style.backgroundColor;
+        rgbSplit = color.slice(4, -1).split(',');
+        r = parseInt(rgbSplit[0]);
+        g = parseInt(rgbSplit[1]);
+        b = parseInt(rgbSplit[2]);
         $('.color-value').text(color);
         let colorDisplayDiv = document.getElementById('current-color');
         colorDisplayDiv.style.background = color;
         event.stopPropagation();
+        fullColorHex(r,g,b);
+
         // setTimeout(function () {
         //     $('#current-color').fadeOut();
         // }, 5000);
     });
 }
 
+//Converts a single R,G, or B value to hex
+const rgbToHex = (rgb) => {
+    let hex = Number(rgb).toString(16);
+    if (hex.length < 2) {
+        hex = "0" + hex;
+    }
+    return hex;
+}
+
+//Converts all RGB values at once
+const fullColorHex = (r, g, b) => {
+    let red = rgbToHex(r)
+    let green = rgbToHex(g)
+    let blue = rgbToHex(b)
+    hexCode = red + green + blue;
+    console.log(hexCode);
+    return hexCode;
+}
+
+function hexToR(h) {
+    return parseInt((cutHex(h)).substring(0, 2), 16)
+}
+function hexToG(h) {
+    return parseInt((cutHex(h)).substring(2, 4), 16)
+}
+function hexToB(h) {
+    return parseInt((cutHex(h)).substring(4, 6), 16)
+}
+
+//If '#' is present in hex value it will be removed, #FFFFFF => FFFFFF
+function cutHex(h) {
+    return (h.charAt(0) == "#") ? h.substring(1, 7) : h
+}
+
+const fullHexToRGB = (color) => {
+    color = cutHex(color);
+    red = hexToR(color);
+    green = hexToG(color);
+    blue = hexToB(color);
+    hexCodeToRGB = 'rgb(' + red + ", " + green + ", " + blue + ")";
+    // console.log(hexCodeToRGB);
+    return hexCodeToRGB;
+}
+
+//WORK IN PROGRESS need to match color IDs
+const changeColor = (color) => {
+    newColor = fullHexToRGB(color);
+    console.log(newColor);
+    console.log('ul ID: ', $('#saved-palettes ul').attr('id'));
+    // console.log(colorPaletteHolder.palettes);
+    for(let i = 0; i < colorPaletteHolder.palettes.length; i++) {
+        console.log('colorPaletteHolder.palettes ID: ', colorPaletteHolder.palettes[i].id.toString());
+    }
+    document.getElementById('current-color').style.background = newColor;
+}
+
 let colorPaletteHolder = new ColorPaletteHolder();
 
 $(document).ready(function () {
     displayIndividualColor();
+    $('#color-change-input').on('change', function () {
+        let newColor = $('#color-change-input').val();
+        changeColor(newColor);
+    })
     const savePalette = () => {
         let newPalette = new Palette(colorPalette[0], colorPalette[1], colorPalette[2], colorPalette[3], colorPalette[4]);
         colorPaletteHolder.addPalette(colorPalette);
@@ -163,15 +229,14 @@ $(document).ready(function () {
 
     const displayPalette = (paletteToDisplay) => {
         $('#palettes').show();
-        console.log(paletteToDisplay.palettes.length);
         for (let i = 0; i < paletteToDisplay.palettes.length; i++) {
             const paletteLayout = `<ul id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
             <div class="wrapper2">
-            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
-            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
-            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
-            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
-            <div class="palette-display color-box${colorPaletteHolder.currentId}"></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}" id='color1'></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}" id='color2'></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}" id='color3'></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}" id='color4'></div>
+            <div class="palette-display color-box${colorPaletteHolder.currentId}" id='color5'></div>
             </div></ul>`
             $('#palettes').append(paletteLayout);
             const savedPalette = $('.color-box' + colorPaletteHolder.currentId);
