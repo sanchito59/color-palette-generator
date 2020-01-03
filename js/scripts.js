@@ -99,17 +99,17 @@ $(document).ready(function () {
         primaryGreen = parseInt(slicePrimaryColor[1])
         primaryBlue = parseInt(slicePrimaryColor[2])
 
-        console.log("primaryRed color is: ", primaryRed);
-        console.log("primaryGreen color is: ", primaryGreen);
-        console.log("primaryBlue color is: ", primaryBlue);
+        // console.log("primaryRed color is: ", primaryRed);
+        // console.log("primaryGreen color is: ", primaryGreen);
+        // console.log("primaryBlue color is: ", primaryBlue);
 
-        offset = Math.floor(Math.random() * 30) + 30
+        offset = Math.floor(Math.random() * 20) + 40
         console.log("offset is: ", offset);
 
         // Tints - adding white to a pure hue:
         let tintColor = slicePrimaryColor.map(function (color) {
             if (color > (255 - offset)) {
-                return color;
+                return 255;
             }
             else {
                 return parseInt(color) + parseInt(offset)
@@ -121,7 +121,7 @@ $(document).ready(function () {
         // Shades - adding black to a pure hue:
         let shadeColor = slicePrimaryColor.map(function (color) {
             if (color - offset < 0) {
-                return color;
+                return 0;
             }
             else {
                 return parseInt(color) - parseInt(offset)
@@ -204,16 +204,24 @@ $(document).ready(function () {
             console.log(selectedTheme)
             let bodyBackgroundColor = selectedTheme[0];
             let headerColor = selectedTheme[1];
-            let textColor = selectedTheme[2];
-            let testContentBackground = selectedTheme[3];
-            let sidebarColor = selectedTheme[4];
+            let testContentBackground = selectedTheme[1];
+            let sidebarColor = selectedTheme[2];
+            let accentColor = selectedTheme[3];
+            let textColor = selectedTheme[4];
 
+
+ 
             document.getElementById('theme-body').style.backgroundColor = bodyBackgroundColor;
             document.getElementById('test-header').style.backgroundColor = headerColor;
-            document.getElementById('test-header').style.color = textColor;
+            document.getElementById('test-header').style.color = sidebarColor;
             document.getElementById('test-sidebar').style.backgroundColor = sidebarColor;
+            document.getElementById('test-sidebar').style.color = testContentBackground;
+
             document.getElementById('test-content').style.backgroundColor = testContentBackground;
-            document.getElementById('test-footer').style.backgroundColor = textColor;
+            document.getElementById('test-footer').style.backgroundColor = sidebarColor;
+            document.getElementById('test-accent').style.color = accentColor;
+
+
         })
     })
 
