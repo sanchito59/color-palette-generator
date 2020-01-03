@@ -97,6 +97,7 @@ $(document).ready(function () {
 
     const displayPalette = (paletteToDisplay) => {
         $('#palettes').show();
+        console.log(paletteToDisplay.palettes.length);
         for (let i = 0; i < paletteToDisplay.palettes.length; i++) {
             const paletteLayout = `<ul id='${colorPaletteHolder.currentId}'><h4>Palette: ${colorPaletteHolder.currentId}</h4>
             <div class="wrapper2">
@@ -108,7 +109,7 @@ $(document).ready(function () {
             </div></ul>`
             $('#palettes').append(paletteLayout);
             const savedPalette = $('.color-box' + colorPaletteHolder.currentId);
-            for (let i = 0; i < paletteLayout.length; i++) {
+            for (let i = 0; i <= 5; i++) {
                 savedPalette[i].style.background = colorPalette[i];
             }
         }
