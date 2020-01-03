@@ -120,6 +120,9 @@ $(document).ready(function () {
             $('#test-theme-button').removeClass('pulse');
         } else {
             $('#test-theme-button').addClass('pulse');
+            setTimeout(function () {
+                $('#test-theme-button').removeClass('pulse');
+            }, 2000)
         }
         $('#theme-ID').text(this.id);
         const paletteTheme = () => {
