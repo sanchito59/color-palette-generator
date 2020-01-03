@@ -54,6 +54,7 @@ body {
   margin: 0 auto;
   padding: 5px;
   border-right: 2px solid black;
+  display: none;
 }
 
 .noselect {
@@ -76,8 +77,8 @@ body {
           box-shadow: 0 0 0 0 white;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-animation: pulse-shadow 2s 1.5;
-          animation: pulse-shadow 2s 1.5;
+  -webkit-animation: pulse-shadow 2s 2.5;
+          animation: pulse-shadow 2s 2.5;
 }
 
 @-webkit-keyframes pulse-shadow {
