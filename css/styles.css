@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   background-color: grey;
   width: 100vw;
 }
@@ -133,7 +132,6 @@ body {
 }
 
 #palettes {
-  margin-left: 2em;
   display: none;
 }
 
@@ -141,6 +139,7 @@ body {
   width: 600px;
   height: 410px;
   padding: 5px;
+  margin-left: 35px;
   margin-bottom: 15px;
   border: 2px solid white;
   display: none;
@@ -239,19 +238,13 @@ body {
 
 #current-color {
   height: 110px;
-  width: 335px;
-  padding: 10px;
+  padding-top: 25px;
   border: 2.5px solid white;
   border-radius: 15px;
-  margin-top: 25px;
-  margin: 0 auto;
-  margin-bottom: 25px;
   color: white;
   text-align: center;
-  line-height: 85px;
   font-weight: bold;
   letter-spacing: 1.5px;
-  display: none;
 }
 
 @media (max-width: 992px) {
@@ -277,15 +270,14 @@ body {
     border-radius: 50%;
   }
   #current-color {
-    height: 60px;
-    width: 270px;
-    padding: 5px;
+    margin-left: 45px;
+    margin-bottom: 25px;
+    height: 90px;
+    width: 325px;
+    padding-top: 25px;
     text-align: center;
     font-size: 12px;
     letter-spacing: 1.5px;
-    line-height: 45px;
-    top: 390px;
-    left: 300px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
