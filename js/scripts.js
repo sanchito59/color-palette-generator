@@ -82,9 +82,75 @@ $(document).ready(function () {
     }
 
     const paletteArray = () => {
-        for (let i = 0; i < colorLength; i++) {
-            colorPalette.push(generateColor());
-        }
+        // FOR FIVE RANDOM COLORS
+        // for (let i = 0; i < colorLength; i++) {
+        //     colorPalette.push(generateColor());
+        // }
+
+        // FOR COLOR SCHEME BASED ON LOGICS:
+
+        // PRIMARY RANDOM COLOR:
+        primaryColor = generateColor()
+        colorPalette.push(primaryColor);
+        console.log("PRIMARY color is: ", primaryColor);
+
+        slicePrimaryColor = primaryColor.slice(4, -1).split(", ")
+        primaryRed = parseInt(slicePrimaryColor[0])
+        primaryGreen = parseInt(slicePrimaryColor[1])
+        primaryBlue = parseInt(slicePrimaryColor[2])
+
+        console.log("primaryRed color is: ", primaryRed);
+        console.log("primaryGreen color is: ", primaryGreen);
+        console.log("primaryBlue color is: ", primaryBlue);
+
+        offset = Math.floor(Math.random() * 30) + 30
+        console.log("offset is: ", offset);
+
+        // Tints - adding white to a pure hue:
+        let tintColor = slicePrimaryColor.map(function (color) {
+            if (color > (255 - offset)) {
+                return color;
+            }
+            else {
+                return parseInt(color) + parseInt(offset)
+            }
+        });
+        correctTintColor = `rgb(${tintColor[0]}, ${tintColor[1]}, ${tintColor[2]})`;
+        colorPalette.push(correctTintColor);
+
+        // Shades - adding black to a pure hue:
+        let shadeColor = slicePrimaryColor.map(function (color) {
+            if (color - offset < 0) {
+                return color;
+            }
+            else {
+                return parseInt(color) - parseInt(offset)
+            }
+        });
+        correctShadeColor = `rgb(${shadeColor[0]}, ${shadeColor[1]}, ${shadeColor[2]})`;
+        colorPalette.push(correctShadeColor);
+
+        // Tones - adding gray to a pure hue:
+        // colorPalette.push(generateColor());
+
+        // complementary:
+        let complementaryColor = slicePrimaryColor.map(function (color) {
+            return Math.abs(parseInt(color) - 255);
+
+        });
+        correctComplementaryColor = `rgb(${complementaryColor[0]}, ${complementaryColor[1]}, ${complementaryColor[2]})`;
+        colorPalette.push(correctComplementaryColor);
+
+
+
+
+
+
+        // FONT
+        colorPalette.push(generateColor());
+
+
+        console.log(colorPalette);
         return colorPalette;
     }
 
