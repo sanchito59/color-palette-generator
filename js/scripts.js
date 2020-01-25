@@ -57,7 +57,7 @@ const displayIndividualColor = () => {
         let colorDisplayDiv = document.getElementById('current-color');
         colorDisplayDiv.style.background = color;
         event.stopPropagation();
-        fullColorHex(r,g,b);
+        fullColorHex(r, g, b);
 
         // setTimeout(function () {
         //     $('#current-color').fadeOut();
@@ -115,7 +115,7 @@ const changeColor = (color) => {
     console.log(newColor);
     console.log('ul ID: ', $('#saved-palettes ul').attr('id'));
     // console.log(colorPaletteHolder.palettes);
-    for(let i = 0; i < colorPaletteHolder.palettes.length; i++) {
+    for (let i = 0; i < colorPaletteHolder.palettes.length; i++) {
         console.log('colorPaletteHolder.palettes ID: ', colorPaletteHolder.palettes[i].id.toString());
     }
     document.getElementById('current-color').style.background = newColor;
@@ -153,12 +153,9 @@ $(document).ready(function () {
         //     colorPalette.push(generateColor());
         // }
 
-        // FOR COLOR SCHEME BASED ON LOGICS:
-
-        // PRIMARY RANDOM COLOR:
+        // Primary Color - always random:
         primaryColor = generateColor()
         colorPalette.push(primaryColor);
-        console.log("PRIMARY color is: ", primaryColor);
 
         slicePrimaryColor = primaryColor.slice(4, -1).split(", ")
         primaryRed = parseInt(slicePrimaryColor[0])
@@ -199,7 +196,7 @@ $(document).ready(function () {
         // Tones - adding gray to a pure hue:
         // colorPalette.push(generateColor());
 
-        // complementary:
+        // Complementary Color - opposite of primary:
         let complementaryColor = slicePrimaryColor.map(function (color) {
             return Math.abs(parseInt(color) - 255);
 
@@ -207,11 +204,13 @@ $(document).ready(function () {
         correctComplementaryColor = `rgb(${complementaryColor[0]}, ${complementaryColor[1]}, ${complementaryColor[2]})`;
         colorPalette.push(correctComplementaryColor);
 
-        // FONT
-        colorPalette.push(generateColor());
-
-
-        console.log(colorPalette);
+        // Font Color:
+        let fontColor = slicePrimaryColor.map(function (color) {
+            return Math.abs(parseInt(color) - 200);
+        });
+        correctFontColor = `rgb(${fontColor[0]}, ${fontColor[1]}, ${fontColor[2]})`;
+        colorPalette.push(correctFontColor);
+        // console.log(colorPalette);
         return colorPalette;
     }
 
