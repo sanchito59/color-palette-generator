@@ -137,7 +137,7 @@ body {
 
 #theme-body {
   width: 600px;
-  /* height: 410px; */
+  height: 495px;
   padding: 5px;
   margin-left: 35px;
   margin-bottom: 15px;
@@ -206,6 +206,15 @@ body {
           justify-content: center;
 }
 
+.center {
+  margin-left: 105px;
+  margin-bottom: 5px;
+}
+
+#complement-center {
+  margin-left: 80px;
+}
+
 .palette-color {
   width: 250px;
   height: 250px;
@@ -246,9 +255,6 @@ body {
   font-weight: bold;
   letter-spacing: 1.5px;
   display: none;
-}
-.center {
-  text-align: center;
 }
 
 @media (max-width: 992px) {
