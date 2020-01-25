@@ -65,7 +65,7 @@ const displayIndividualColor = () => {
     });
 }
 
-//Converts a single R,G, or B value to hex
+//Converts a single R, G, or B value to hex
 const rgbToHex = (rgb) => {
     let hex = Number(rgb).toString(16);
     if (hex.length < 2) {
@@ -207,11 +207,6 @@ $(document).ready(function () {
         correctComplementaryColor = `rgb(${complementaryColor[0]}, ${complementaryColor[1]}, ${complementaryColor[2]})`;
         colorPalette.push(correctComplementaryColor);
 
-
-
-
-
-
         // FONT
         colorPalette.push(generateColor());
 
@@ -271,11 +266,9 @@ $(document).ready(function () {
             let headerColor = selectedTheme[1];
             let testContentBackground = selectedTheme[1];
             let sidebarColor = selectedTheme[2];
-            let accentColor = selectedTheme[3];
+            let complimentColor = selectedTheme[3];
             let textColor = selectedTheme[4];
 
-
- 
             document.getElementById('theme-body').style.backgroundColor = bodyBackgroundColor;
             document.getElementById('test-header').style.backgroundColor = headerColor;
             document.getElementById('test-header').style.color = sidebarColor;
@@ -284,9 +277,8 @@ $(document).ready(function () {
 
             document.getElementById('test-content').style.backgroundColor = testContentBackground;
             document.getElementById('test-footer').style.backgroundColor = sidebarColor;
-            document.getElementById('test-accent').style.color = accentColor;
-
-
+            document.getElementById('test-compliment').style.color = complimentColor;
+            document.getElementById('test-text').style.color = textColor;
         })
     })
 
