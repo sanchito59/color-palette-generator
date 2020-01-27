@@ -1,10 +1,18 @@
-https://sanchito59.github.io/color-palette-generator/
-
 # Color Palette Generator
 
-## By **Developer**
+## By **Chris Sanchez and Noah Horwitz**
 
-This application is/will...
+[Color Palette Generator](https://sanchito59.github.io/color-palette-generator/) is a work in progress color palette generator built to practice Object Oriented Principles of JavaScript programming. It makes uses of ES6 object class constructors as well as other fundamental programming concepts such as looping and array manipulation through mapping, slicing, etc. The program features the ability to save palettes, read previous palettes, and display those entire palettes as a theme in a webpage mockup. As well, there is conversion from RGB to hex and hex and RGB to provide the user thorough access to information on generated colors. 
+
+Work in progress features include:
+- Ruby/Rails rewrite
+- Full CRUD
+- Database backup
+- Display hex and RGB conversion
+- 'Locking' colors in unsaved palettes allowing for customization
+- Converting color-range colors to the palette object
+
+![homepage for Color Palette Generator](https://i.imgur.com/9tGmoG6.png?1 "read")
 - - - -
 ### Setup/Installation Requirements
 
@@ -12,69 +20,31 @@ This application is/will...
 
 #### Zip:
 
-1. Click [here](https://github.com/exampleUsername/example-project-title.git) to go to the repository location where you will find the clone/download menu.
+1. Click [here](https://github.com/sanchito59/color-palette-generator.git) to go to the repository location where you will find the clone/download menu.
 
  2. Navigate to the directory (folder) that contains your browser's downloads.
  3. Double-click on **Color Palette Generator** directory (folder).
  4. Open directory contents by extracting/unzipping documents from folder.
  5. Run index.html.
 
-#### Clone: 
+#### Clone/Installation: 
 
- 1. To clone the repository, from your terminal or command line enter: "git clone  https://github.com/exampleUsername/example-project-title.git"
- 2. Once the repository finishes downloading you will need to install the packaged modules.
+ 1. To clone the repository, from your terminal or command line enter: "git clone  https://github.com/sanchito59/color-palette-generator.git"
+ 2. Once downloaded, simply open `index.html` in a web browser.
 
-#### Install:
-In order to use **Color Palette Generator** you will need to install the dependenices required to run it. Once you have cloned or zipped the file from Github, in your terminal or command line do the following: 
-
-from _C:\Users\exampleUser\exampleCloneLocation\example-project-title>_  
-1. npm install
-2. npm run build
-
-Step 1 will install all of the dependencies used to develop **Color Palette Generator**.  
-Step 2 will build the project, performing any necessary building/prep tasks.
-
-**_If you are using Mac OS, you must change:_** 
-
-_"'start': 'npm run build & webpack-dev-server --open --mode development',"_  
-**_to_**  
-_"'start': 'npm run build; webpack-dev-server --open --mode development',"_
-
-- - - -
-
-### Specifications:
-
-|Symbol| Value  |
-|---|---|
-|a|0|
-|b|1|
-|c|2|
-|d|3|
-|c|4|
-|d|5|
-|e|6|
-
-|Input|Output|
-|---|---|
-|input|return false|
-|input1|output1|
-|input2|output2|
-|input3|output3|
 - - - -
 
 ### Technologies Used
 
- - JavaScript/jQuery
- - Webpack Plugins
- - API
- - Jest
+ - JavaScript
+ - jQuery
  - HTML5
- - CSS3/Bootstrap/SCSS
+ - CSS3/Bootstrap 4/SCSS
 
 - - - -
 ### Support and Contact
 
-If you run into any issues running **Color Palette Generator**, please contact **Developer**.
+If you run into any issues running **Color Palette Generator**, please contact **Chris Sanchez**.
 
 ### License
 
@@ -84,4 +54,4 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Copyright (c) 2019 **Developer**
+Copyright (c) 2019 **Chris Sanchez**
